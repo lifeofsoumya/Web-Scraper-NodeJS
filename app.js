@@ -28,9 +28,9 @@ async function scrapeChannel(url) { // init function with to be scraped url argu
 
     // 3. Clicking a button and grabbing inside
 
-    await page.click('.nav-button') // clicks on navbar button on the page using css class 
+    await page.evaluate(() => document.querySelector('.header-image').click()); // 'page.click' was not working, clicks on navbar button on the page using css class
     
-    await new Promise(resolve => setTimeout(resolve, 5000)); // setTimeout(() => {  console.log("Waiting till the page loads"); }, 5000); // waiting for 5 seconds after clicking
+    await new Promise(resolve => setTimeout(resolve, 1000)); // setTimeout(() => {  console.log("Waiting till the page loads"); }, 5000); // waiting for 5 seconds after clicking
     
     await page.screenshot({path : "afterClick.png"}) // saves a screenshot after visiting a page by clicking
 
