@@ -16,7 +16,7 @@ async function scrapeChannel(url) { // init function with to be scraped url argu
 
     browser.close();    // close the temporary headless browser
 
-    console.log('name, avatarIMG')      // print the result text and Image src on console
+    console.log(name, avatarIMG)      // print the result text and Image src on console
     
 }
 
