@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer')
+const fs = require('fs/promises') // adding file handling capability
 
 async function scrapeChannel(url) { // init function with to be scraped url argument
 
@@ -15,9 +16,17 @@ async function scrapeChannel(url) { // init function with to be scraped url argu
     const src = await el2.getProperty('src');
     const avatarIMG = await src.jsonValue();
 
+    // scraping and saving the information to a text file
+
+    const title = await page.evaluate(()=>{ //write any client side js inside the function
+        return Array.from(document.querySelectorAll('.entry-title')).map(x => x.textContent) // selecting all the headings having same class and creating an array from the text content of them using map
+    })
+
+    await fs.writeFile("headings.txt", title.join("\r\n"))
+
     browser.close();    // close the temporary headless browser
 
-    console.log(name, avatarIMG)      // print the result text and Image src on console
+    console.log(title, name, avatarIMG)      // print the result text and Image src on console
     
 }
 
