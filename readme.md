@@ -12,10 +12,11 @@ Web scraping is used for extracting specific data from websites over the interne
 
 ### No Database
 
-To avoid initial complexity I've used only an array of records instead of using Database.
+To avoid initial complexity the data is being printed on the console.
 
 ### Possible Improvements
 
 - Clicking a page and accessing inner content by it's own
+- Saving collected data on a DataBase
 - Automating the Scraping between time interval
 
