@@ -5,6 +5,7 @@ async function scrapeChannel(url) { // init function with to be scraped url argu
     const browser = await puppeteer.launch();      // launch puppeteer
     const page = await browser.newPage();       // generate a headless browser
     await page.goto(url);       // open argument passed url
+    await page.screenshot({path : "preview.png", fullPage: true}) // upon visiting take a fullPage screenShot of the page
 
     const [el] = await page.$x('/html/body/div[1]/div/div/main/div/article[1]/div/header/h2/a');        // select specific element on the url fetched page with 'xpath' & assign it to el
     const text = await el.getProperty('textContent');       // choose type of data needed
