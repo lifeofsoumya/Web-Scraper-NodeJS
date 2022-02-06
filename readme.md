@@ -16,7 +16,7 @@ To avoid initial complexity the data is being printed on the console.
 
 ### Possible Improvements
 
-- Clicking a page and accessing inner content by it's own
+- Clicking a page and accessing inner content by it's own [Solved]
 - Saving collected data on a DataBase
 - Automating the Scraping between time interval
 
