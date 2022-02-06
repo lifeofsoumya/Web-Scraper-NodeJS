@@ -22,7 +22,7 @@ async function scrapeChannel(url) { // init function with to be scraped url argu
         return Array.from(document.querySelectorAll('.entry-title')).map(x => x.textContent) // selecting all the headings having same class and creating an array from the text content of them using map
     })
 
-    await fs.writeFile("headings.txt", title.join("\r\n"))
+    await fs.writeFile("headings.txt", title.join("\r\n"))  // join the content of array of headings store in title, and join it with \r\n return new line, and write then to headings.txt
 
     browser.close();    // close the temporary headless browser
 
